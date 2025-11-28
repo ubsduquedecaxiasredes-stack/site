@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBS Duque de Caxias - Excelência em Saúde Pública</title>
+    <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0066cc">
+        <meta name="msapplication-TileColor" content="#0066cc">
+        <meta name="theme-color" content="#0066cc">
+
+        <!-- Favicon SVG (alternativa moderna) -->
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
+            --primary-light: #4d94ff;
+            --secondary: #00c897;
+            --accent: #ff6b6b;
+            --dark: #1e2a3a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Skip to main content for accessibility */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        /* Accessibility Controls */
+        .accessibility-bar {
+            background: var(--dark);
+            color: var(--white);
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+
+        .accessibility-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .accessibility-controls {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .font-controls, .contrast-control, .spacing-control {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .accessibility-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .accessibility-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: var(--white);
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .language-selector option {
+            background: var(--dark);
+            color: var(--white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-scrolled {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+
+        .whatsapp-cta {
+            background: #25D366;
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            background: #20bd5a;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(67, 67, 67, 0.838), rgba(0, 102, 204, 0.696)), url('WhatsApp Image 2025-11-26 at 11.18.35.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 140px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.03);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-lg);
+            position: absolute;
+            animation: float 6s ease-in-out infinite;
+            max-width: 180px;
+            z-index: 3;
+        }
+
+        .floating-card:nth-child(1) {
+            top: 30px;
+            right: 40px;
+            animation-delay: 0s;
+        }
+
+        .floating-card:nth-child(2) {
+            bottom: 80px;
+            left: 20px;
+            animation-delay: 2s;
+        }
+
+        .floating-card:nth-child(3) {
+            top: 300px;
+            right: 10px;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .card-desc {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Services Section */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 30px 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        .service-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            gap: 10px;
+        }
+
+        /* Stats Section */
+        .stats {
+            background: var(--dark);
+            color: var(--white);
+            padding: 70px 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            background: var(--light);
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 220px;
+            position: relative;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: var(--white);
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .contact-details p {
+            color: var(--gray);
+        }
+
+        .whatsapp-highlight {
+            background: rgba(37, 211, 102, 0.1);
+            border-radius: var(--radius);
+            padding: 20px;
+            margin-top: 10px;
+            border-left: 4px solid #25D366;
+        }
+
+        .whatsapp-highlight .contact-icon {
+            background: rgba(37, 211, 102, 0.2);
+            color: #25D366;
+        }
+
+        .map-placeholder {
+            background: var(--light);
+            border-radius: var(--radius);
+            height: 100%;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 15px;
+            color: var(--gray);
+        }
+
+        .map-placeholder i {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        /* Footer */
+        /* Footer Compacto */
+footer {
+    background: var(--dark);
+    color: var(--white);
+    padding: 25px 0 15px;
+}
+
+.footer-compact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.footer-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.footer-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 12px;
+    max-width: 400px;
+    line-height: 1.4;
+}
+
+.footer-contact {
+    opacity: 0.8;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact i {
+    width: 16px;
+    color: var(--primary);
+    font-size: 0.8rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.social-link {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+}
+
+.footer-copyright p {
+    margin: 0;
+    opacity: 0.6;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .footer-social {
+        align-self: flex-start;
+    }
+    
+    footer {
+        padding: 20px 0 12px;
+    }
+}
+
+        /* High Contrast Mode */
+        .high-contrast {
+            --primary: #000000;
+            --primary-dark: #000000;
+            --primary-light: #333333;
+            --secondary: #000000;
+            --accent: #000000;
+            --dark: #000000;
+            --light: #ffffff;
+            --gray: #000000;
+            --white: #ffffff;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .high-contrast body {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .high-contrast .service-card,
+        .high-contrast .card,
+        .high-contrast .gallery-item {
+            border: 2px solid #000000;
+            background: #ffffff;
+        }
+
+        .high-contrast .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('ubs-banner.jpg');
+        }
+
+        .high-contrast .stats {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .high-contrast footer {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .high-contrast .accessibility-bar {
+            background: #000000;
+        }
+
+        /* Increased spacing mode */
+        .increased-spacing * {
+            letter-spacing: 0.5px;
+        }
+
+        .increased-spacing .section-title,
+        .increased-spacing .service-title,
+        .increased-spacing .card-title,
+        .increased-spacing .contact-details h3,
+        .increased-spacing .footer-col h3 {
+            letter-spacing: 1px;
+        }
+
+        /* VLibras Widget */
+        .vlibras-wrapper {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-visual {
+                order: -1;
+                height: 300px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .accessibility-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                gap: 15px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 100px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            /* Remove floating animation on mobile */
+            .floating-card {
+                position: relative !important;
+                margin: 10px auto;
+                max-width: 100%;
+                animation: none !important;
+                transform: none !important;
+            }
+            
+            .hero-visual {
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .accessibility-controls {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for screen readers -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar">
+        <div class="accessibility-container">
+            <div class="accessibility-controls">
+                <div class="font-controls">
+                    <span>Ajustar texto:</span>
+                    <button class="accessibility-btn" id="decrease-font" aria-label="Diminuir tamanho da fonte">A-</button>
+                    <button class="accessibility-btn" id="normal-font" aria-label="Tamanho normal da fonte">A</button>
+                    <button class="accessibility-btn" id="increase-font" aria-label="Aumentar tamanho da fonte">A+</button>
+                </div>
+                <div class="contrast-control">
+                    <button class="accessibility-btn" id="high-contrast" aria-label="Alternar alto contraste">Alto Contraste</button>
+                </div>
+                <div class="spacing-control">
+                    <button class="accessibility-btn" id="increase-spacing" aria-label="Aumentar espaçamento">Espaçamento</button>
+                </div>
+            </div>
+            <div class="language-selector">
+                <select id="language-select" aria-label="Selecionar idioma">
+                    <option value="pt">Português</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-hospital-alt" aria-hidden="true"></i>
+                <span>UBS Duque de Caxias</span>
+            </a>
+            
+            <nav class="nav-menu" role="navigation" aria-label="Menu principal">
+                <a href="#" class="nav-link active" data-translate="nav_home">Início</a>
+                <a href="#services" class="nav-link" data-translate="nav_services">Serviços</a>
+                <a href="#gallery" class="nav-link" data-translate="nav_gallery">Galeria</a>
+                <a href="#contact" class="nav-link" data-translate="nav_contact">Contato</a>
+                <a href="https://wa.me/5531995309507" class="whatsapp-cta" target="_blank" aria-label="Entrar em contato via WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    WhatsApp
+                </a>
+            </nav>
+            
+            <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="main-content">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 data-translate="hero_title">Cuidando da sua saúde com excelência e humanização</h1>
+                <p data-translate="hero_description">Na UBS Duque de Caxias, oferecemos atendimento médico de qualidade, programas de prevenção e promoção da saúde para toda a comunidade.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span data-translate="hero_button_location">Nossa Localização</span>
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                        <span data-translate="hero_button_services">Nossos Serviços</span>
+                    </a>
+                    <a href="https://wa.me/5531995309507" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <span data-translate="hero_button_contact">Fale Conosco</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-icon">
+                        <i class="fas fa-user-md" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-title" data-translate="card1_title">40 Profissionais</div>
+                    <div class="card-desc" data-translate="card1_desc">Equipe qualificada</div>
+                </div>
+                
+                <div class="floating-card">
+                    <div class="card-icon">
+                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-title" data-translate="card2_title">Atendimento Humanizado</div>
+                    <div class="card-desc" data-translate="card2_desc">Cuidado integral</div>
+                </div>
+                
+                <div class="floating-card">
+                    <div class="card-icon">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                    </div>
+                    <div class="card-title" data-translate="card3_title">Horário</div>
+                    <div class="card-desc" data-translate="card3_desc">Atendemos até às 17h</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <div class="section-header">
+            <h2 class="section-title" data-translate="services_title">Nossos Serviços</h2>
+            <p class="section-subtitle" data-translate="services_subtitle">Oferecemos uma gama completa de serviços de saúde para atender toda a família</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service1_title">Consultas Médicas</h3>
+                <p class="service-desc" data-translate="service1_desc">Atendimento com clínicos gerais, pediatras, ginecologistas e outros especialistas.</p>
+
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-syringe" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service2_title">Vacinação</h3>
+                <p class="service-desc" data-translate="service2_desc">Imunização para todas as idades conforme o calendário nacional de vacinação.</p>
+                
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service3_title">Assistência Social</h3>
+                <p class="service-desc" data-translate="service3_desc">Apoio psicossocial, orientação e encaminhamento para programas sociais.</p>
+                
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-pills" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service4_title">Farmácia Básica</h3>
+                <p class="service-desc" data-translate="service4_desc">Dispensação de medicamentos essenciais mediante prescrição médica.</p>
+                
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-baby" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service5_title">Pré-Natal</h3>
+                <p class="service-desc" data-translate="service5_desc">Acompanhamento integral da gestante e do bebê durante toda a gravidez.</p>
+                
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-teeth" aria-hidden="true"></i>
+                </div>
+                <h3 class="service-title" data-translate="service6_title">Saúde Bucal</h3>
+                <p class="service-desc" data-translate="service6_desc">Atendimento odontológico, prevenção e educação em saúde bucal.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">11.800+</div>
+                <div class="stat-label" data-translate="stat1_label">População atendida</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">3</div>
+                <div class="stat-label" data-translate="stat2_label">Equipes de Saúde da Família</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">40+</div>
+                <div class="stat-label" data-translate="stat3_label">Profissionais</div>
+            </div>
+            
+            <div class="stat-item">
+                <div class="stat-number">40</div>
+                <div class="stat-label" data-translate="stat4_label">Salas de serviços</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="section-header">
+            <h2 class="section-title" data-translate="gallery_title">Nossa Estrutura</h2>
+            <p class="section-subtitle" data-translate="gallery_subtitle">Conheça nossas instalações!</p>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.18.35.jpeg" alt="Recepção da UBS">
+                    
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.17.jpeg" alt="Consultório Médico">
+                    
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.18 (1).jpeg" alt="Sala de Vacinação">
+                    
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.18.jpeg" alt="Sala de Espera">
+                    
+                </div>
+
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.19 (1).jpeg" alt="Sala de Espera">
+                    
+                </div>
+
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.19.jpeg" alt="Sala de Espera">
+                    
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.21 (1).jpeg" alt="Sala de Espera">
+                    
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.21.jpeg" alt="Sala de Espera">
+                    
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.22 (1).jpeg" alt="Sala de Espera">
+                    
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.22 (2).jpeg" alt="Sala de Espera">
+                    
+                </div>
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.22.jpeg" alt="Sala de Espera">
+                    
+                </div>
+
+                <div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.23 (1).jpeg" alt="Sala de Espera">
+                    
+                </div><div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.23 (2).jpeg" alt="Sala de Espera">
+                    
+                </div><div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.23.jpeg" alt="Sala de Espera">
+                    
+                </div><div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.24 (1).jpeg" alt="Sala de Espera">
+                    
+                </div><div class="gallery-item">
+                    <img src="WhatsApp Image 2025-11-26 at 11.40.26.jpeg" alt="Sala de Espera">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="section-header">
+            <h2 class="section-title" data-translate="contact_title">Fale conosco!</h2>
+            <p class="section-subtitle" data-translate="contact_subtitle">Estamos aqui para cuidar de você e sua família</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_address_title">Endereço</h3>
+                        <p data-translate="contact_address">Rua Lisboa, 91 - Duque de Caxias<br>Bairro, CEP 32673-550</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_phone_title">Telefone</h3>
+                        <p>(31) 99530-9507</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item whatsapp-highlight">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_whatsapp_title">WhatsApp</h3>
+                        <p><strong>(31) 99530-9507</strong></p>
+                        <p data-translate="contact_whatsapp_desc">Atendimento rápido e direto</p>
+                        <a href="https://wa.me/5531995309507" class="btn btn-whatsapp" style="margin-top: 10px; padding: 10px 20px;" target="_blank">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span data-translate="contact_whatsapp_button">Enviar Mensagem</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3 data-translate="contact_hours_title">Horário de Funcionamento</h3>
+                        <p data-translate="contact_hours">Segunda a Sexta: 7h às 17h<br>Sábado: 7h às 12h</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.522435724882!2d-44.19837272468657!3d-19.96789998157311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6c3c7c7c7c7c7%3A0x0!2sRua%20Lisboa%2C%2091%20-%20Duque%20de%20Caxias%2C%20Betim%20-%20MG%2C%2032673-550!5e0!3m2!1spt-BR!2sbr!4v1690000000000!5m2!1spt-BR!2sbr"
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; border-radius: var(--radius);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    aria-label="Localização da UBS Duque de Caxias no mapa">
+                </iframe>
+            </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer>
+    <div class="footer-compact">
+        <div class="footer-main">
+            <div class="footer-info">
+                <h3>UBS Duque de Caxias</h3>
+                <p class="footer-desc">Unidade Básica de Saúde comprometida com o cuidado integral da saúde da comunidade.</p>
+                <div class="footer-contact">
+                    <p><i class="fas fa-phone"></i> (31) 99530-9507</p>
+                    <p><i class="fas fa-clock"></i> Seg-Sex: 7h-17h | Sáb: 7h-12h</p>
+                </div>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/profile.php?id=61584051702563" class="social-link" aria-label="Facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ubs.duquedecaxias/" class="social-link" aria-label="Instagram" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/5531995309507" class="social-link" aria-label="WhatsApp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; 2025 - UBS Duque de Caxias. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+    <!-- VLibras Widget -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize VLibras
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.querySelector('.nav-menu');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            menu.classList.toggle('active');
+            this.setAttribute('aria-expanded', !isExpanded);
+        });
+
+        // Accessibility features
+        document.getElementById('decrease-font').addEventListener('click', function() {
+            document.documentElement.style.fontSize = '14px';
+        });
+
+        document.getElementById('normal-font').addEventListener('click', function() {
+            document.documentElement.style.fontSize = '16px';
+        });
+
+        document.getElementById('increase-font').addEventListener('click', function() {
+            document.documentElement.style.fontSize = '18px';
+        });
+
+        document.getElementById('high-contrast').addEventListener('click', function() {
+            document.body.classList.toggle('high-contrast');
+        });
+
+        document.getElementById('increase-spacing').addEventListener('click', function() {
+            document.body.classList.toggle('increased-spacing');
+        });
+
+        // Translation system
+        const translations = {
+            pt: {
+                // Navigation
+                "nav_home": "Início",
+                "nav_services": "Serviços",
+                "nav_gallery": "Galeria",
+                "nav_contact": "Contato",
+                "nav_team": "Equipe",
+                
+                // Hero section
+                "hero_title": "Cuidando da sua saúde com excelência e humanização",
+                "hero_description": "Na UBS Duque de Caxias, oferecemos atendimento médico de qualidade, programas de prevenção e promoção da saúde para toda a comunidade.",
+                "hero_button_location": "Nossa Localização",
+                "hero_button_services": "Nossos Serviços",
+                "hero_button_contact": "Fale Conosco",
+                
+                // Cards
+                "card1_title": "+40 Profissionais",
+                "card1_desc": "Equipe qualificada",
+                "card2_title": "Atendimento Humanizado",
+                "card2_desc": "Cuidado integral",
+                "card3_title": "Horário Estendido",
+                "card3_desc": "Atendemos até às 17h",
+                
+                // Services
+                "services_title": "Nossos Serviços",
+                "services_subtitle": "Oferecemos uma gama completa de serviços de saúde para atender toda a família",
+                "service1_title": "Consultas Médicas",
+                "service1_desc": "Atendimento com clínicos gerais, pediatras, ginecologistas e outros especialistas.",
+                "service2_title": "Vacinação",
+                "service2_desc": "Imunização para todas as idades conforme o calendário nacional de vacinação.",
+                "service3_title": "Assistência Social",
+                "service3_desc": "Apoio psicossocial, orientação e encaminhamento para programas sociais.",
+                "service4_title": "Farmácia Básica",
+                "service4_desc": "Dispensação de medicamentos essenciais mediante prescrição médica.",
+                "service5_title": "Pré-Natal",
+                "service5_desc": "Acompanhamento integral da gestante e do bebê durante toda a gravidez.",
+                "service6_title": "Saúde Bucal",
+                "service6_desc": "Atendimento odontológico, prevenção e educação em saúde bucal.",
+                "service_link": "Saiba mais",
+                
+                // Stats
+                "stat1_label": "População atendida",
+                "stat2_label": "Equipes de Saúde da Família",
+                "stat3_label": "Profissionais",
+                "stat4_label": "Salas de serviços",
+                
+                // Gallery
+                "gallery_title": "Nossa Estrutura",
+                "gallery_subtitle": "Conheça nossas instalações!",
+                "gallery1_title": "Recepção Acolhedora",
+                "gallery1_desc": "Ambiente confortável para nossos pacientes",
+                "gallery2_title": "Consultórios Equipados",
+                "gallery2_desc": "Estrutura completa para atendimento",
+                "gallery3_title": "Sala de Vacinação",
+                "gallery3_desc": "Ambiente seguro e adequado",
+                "gallery4_title": "Sala de Espera Confortável",
+                "gallery4_desc": "Espaço amplo e arejado",
+                
+                // Contact
+                "contact_title": "Fale conosco!",
+                "contact_subtitle": "Estamos aqui para cuidar de você e sua família",
+                "contact_address_title": "Endereço",
+                "contact_address": "Rua Lisboa, 91 - Duque de Caxias<br>Bairro, CEP 32673-550",
+                "contact_phone_title": "Telefone",
+                "contact_whatsapp_title": "WhatsApp",
+                "contact_whatsapp_desc": "Atendimento rápido e direto",
+                "contact_whatsapp_button": "Enviar Mensagem",
+                "contact_hours_title": "Horário de Funcionamento",
+                "contact_hours": "Segunda a Sexta: 7h às 17h<br>Sábado: 7h às 12h",
+                "contact_transport_title": "Como Chegar",
+                "contact_transport": "Linhas de ônibus: 101, 205, 304<br>Ponto próximo: Praça Central",
+                "contact_map": "Mapa de localização",
+                
+                // Footer
+                "footer_about_title": "UBS Duque de Caxias",
+                "footer_about_desc": "Unidade Básica de Saúde comprometida com o cuidado integral da saúde da comunidade, oferecendo atendimento humanizado e serviços de qualidade.",
+                "footer_links_title": "Links Rápidos",
+                "footer_services_title": "Serviços",
+                "footer_info_title": "Informações",
+                "footer_about": "Sobre Nós",
+                "footer_hours": "Horários",
+                "footer_docs": "Documentação",
+                "footer_jobs": "Trabalhe Conosco",
+                "footer_privacy": "Política de Privacidade",
+                "footer_rights": "Todos os direitos reservados."
+            },
+            en: {
+                // Navigation
+                "nav_home": "Home",
+                "nav_services": "Services",
+                "nav_gallery": "Gallery",
+                "nav_contact": "Contact",
+                "nav_team": "Team",
+                
+                // Hero section
+                "hero_title": "Caring for your health with excellence and humanization",
+                "hero_description": "At UBS Duque de Caxias, we offer quality medical care, prevention programs and health promotion for the entire community.",
+                "hero_button_location": "Our Location",
+                "hero_button_services": "Our Services",
+                "hero_button_contact": "Contact Us",
+                
+                // Cards
+                "card1_title": "+40 Professionals",
+                "card1_desc": "Qualified team",
+                "card2_title": "Humanized Care",
+                "card2_desc": "Comprehensive care",
+                "card3_title": "Extended Hours",
+                "card3_desc": "We serve until 5pm",
+                
+                // Services
+                "services_title": "Our Services",
+                "services_subtitle": "We offer a complete range of health services to serve the whole family",
+                "service1_title": "Medical Consultations",
+                "service1_desc": "Care with general practitioners, pediatricians, gynecologists and other specialists.",
+                "service2_title": "Vaccination",
+                "service2_desc": "Immunization for all ages according to the national vaccination calendar.",
+                "service3_title": "Social Assistance",
+                "service3_desc": "Psychosocial support, guidance and referral to social programs.",
+                "service4_title": "Basic Pharmacy",
+                "service4_desc": "Dispensing of essential medicines with medical prescription.",
+                "service5_title": "Prenatal Care",
+                "service5_desc": "Comprehensive monitoring of the pregnant woman and baby throughout pregnancy.",
+                "service6_title": "Oral Health",
+                "service6_desc": "Dental care, prevention and oral health education.",
+                "service_link": "Learn more",
+                
+                // Stats
+                "stat1_label": "Served population",
+                "stat2_label": "Family Health Teams",
+                "stat3_label": "Professionals",
+                "stat4_label": "Service rooms",
+                
+                // Gallery
+                "gallery_title": "Our Structure",
+                "gallery_subtitle": "Get to know our facilities!",
+                "gallery1_title": "Welcoming Reception",
+                "gallery1_desc": "Comfortable environment for our patients",
+                "gallery2_title": "Equipped Offices",
+                "gallery2_desc": "Complete structure for service",
+                "gallery3_title": "Vaccination Room",
+                "gallery3_desc": "Safe and suitable environment",
+                "gallery4_title": "Comfortable Waiting Room",
+                "gallery4_desc": "Spacious and airy space",
+                
+                // Contact
+                "contact_title": "Contact us!",
+                "contact_subtitle": "We are here to take care of you and your family",
+                "contact_address_title": "Address",
+                "contact_address": "Rua Lisboa, 91 - Duque de Caxias<br>Neighborhood, ZIP Code 32673-550",
+                "contact_phone_title": "Phone",
+                "contact_whatsapp_title": "WhatsApp",
+                "contact_whatsapp_desc": "Quick and direct service",
+                "contact_whatsapp_button": "Send Message",
+                "contact_hours_title": "Business Hours",
+                "contact_hours": "Monday to Friday: 7am to 5pm<br>Saturday: 7am to 12pm",
+                "contact_transport_title": "How to Get Here",
+                "contact_transport": "Bus lines: 101, 205, 304<br>Nearby stop: Central Square",
+                "contact_map": "Location map",
+                
+                // Footer
+                "footer_about_title": "UBS Duque de Caxias",
+                "footer_about_desc": "Basic Health Unit committed to comprehensive community health care, offering humanized care and quality services.",
+                "footer_links_title": "Quick Links",
+                "footer_services_title": "Services",
+                "footer_info_title": "Information",
+                "footer_about": "About Us",
+                "footer_hours": "Hours",
+                "footer_docs": "Documentation",
+                "footer_jobs": "Work With Us",
+                "footer_privacy": "Privacy Policy",
+                "footer_rights": "All rights reserved."
+            },
+            es: {
+                // Navigation
+                "nav_home": "Inicio",
+                "nav_services": "Servicios",
+                "nav_gallery": "Galería",
+                "nav_contact": "Contacto",
+                "nav_team": "Equipo",
+                
+                // Hero section
+                "hero_title": "Cuidando de su salud con excelencia y humanización",
+                "hero_description": "En UBS Duque de Caxias, ofrecemos atención médica de calidad, programas de prevención y promoción de la salud para toda la comunidad.",
+                "hero_button_location": "Nuestra Ubicación",
+                "hero_button_services": "Nuestros Servicios",
+                "hero_button_contact": "Contáctenos",
+                
+                // Cards
+                "card1_title": "+40 Profesionales",
+                "card1_desc": "Equipo calificado",
+                "card2_title": "Atención Humanizada",
+                "card2_desc": "Cuidado integral",
+                "card3_title": "Horario Extendido",
+                "card3_desc": "Atendemos hasta las 17h",
+                
+                // Services
+                "services_title": "Nuestros Servicios",
+                "services_subtitle": "Ofrecemos una gama completa de servicios de salud para atender a toda la familia",
+                "service1_title": "Consultas Médicas",
+                "service1_desc": "Atención con médicos generales, pediatras, ginecólogos y otros especialistas.",
+                "service2_title": "Vacunación",
+                "service2_desc": "Inmunización para todas las edades según el calendario nacional de vacunación.",
+                "service3_title": "Asistencia Social",
+                "service3_desc": "Apoyo psicosocial, orientación y derivación a programas sociales.",
+                "service4_title": "Farmacia Básica",
+                "service4_desc": "Dispensación de medicamentos esenciales bajo prescripción médica.",
+                "service5_title": "Prenatal",
+                "service5_desc": "Seguimiento integral de la gestante y del bebé durante todo el embarazo.",
+                "service6_title": "Salud Bucal",
+                "service6_desc": "Atención odontológica, prevención y educación en salud bucal.",
+                "service_link": "Saber más",
+                
+                // Stats
+                "stat1_label": "Población atendida",
+                "stat2_label": "Equipos de Salud Familiar",
+                "stat3_label": "Profesionales",
+                "stat4_label": "Salas de servicios",
+                
+                // Gallery
+                "gallery_title": "Nuestra Estructura",
+                "gallery_subtitle": "¡Conozca nuestras instalaciones!",
+                "gallery1_title": "Recepción Acogedora",
+                "gallery1_desc": "Ambiente cómodo para nuestros pacientes",
+                "gallery2_title": "Consultorios Equipados",
+                "gallery2_desc": "Estructura completa para atención",
+                "gallery3_title": "Sala de Vacunación",
+                "gallery3_desc": "Ambiente seguro y adecuado",
+                "gallery4_title": "Sala de Espera Cómoda",
+                "gallery4_desc": "Espacio amplio y aireado",
+                
+                // Contact
+                "contact_title": "¡Hable con nosotros!",
+                "contact_subtitle": "Estamos aquí para cuidar de usted y su familia",
+                "contact_address_title": "Dirección",
+                "contact_address": "Rua Lisboa, 91 - Duque de Caxias<br>Barrio, CEP 32673-550",
+                "contact_phone_title": "Teléfono",
+                "contact_whatsapp_title": "WhatsApp",
+                "contact_whatsapp_desc": "Atención rápida y directa",
+                "contact_whatsapp_button": "Enviar Mensaje",
+                "contact_hours_title": "Horario de Funcionamiento",
+                "contact_hours": "Lunes a Viernes: 7h a 17h<br>Sábado: 7h a 12h",
+                "contact_transport_title": "Cómo Llegar",
+                "contact_transport": "Líneas de autobús: 101, 205, 304<br>Parada cercana: Plaza Central",
+                "contact_map": "Mapa de ubicación",
+                
+                // Footer
+                "footer_about_title": "UBS Duque de Caxias",
+                "footer_about_desc": "Unidad Básica de Salud comprometida con el cuidado integral de la salud de la comunidad, ofreciendo atención humanizada y servicios de calidad.",
+                "footer_links_title": "Enlaces Rápidos",
+                "footer_services_title": "Servicios",
+                "footer_info_title": "Información",
+                "footer_about": "Sobre Nosotros",
+                "footer_hours": "Horarios",
+                "footer_docs": "Documentación",
+                "footer_jobs": "Trabaje Con Nosotros",
+                "footer_privacy": "Política de Privacidad",
+                "footer_rights": "Todos los derechos reservados."
+            }
+        };
+
+        // Language translation
+        document.getElementById('language-select').addEventListener('change', function() {
+            const lang = this.value;
+            translatePage(lang);
+        });
+
+        function translatePage(lang) {
+            const elements = document.querySelectorAll('[data-translate]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        // Handle HTML in translations
+                        if (translations[lang][key].includes('<br>')) {
+                            element.innerHTML = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    }
+                }
+            });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.querySelector('.nav-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target) && menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
